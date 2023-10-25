@@ -28,6 +28,12 @@
 <a href="mailto:antonio.elias71@aluno.ifce.edu.br" target="_blank">
   <img src="https://img.shields.io/badge/-Gmail-%23FF0000?style=for-the-badge&logo=gmail&logoColor=white">
 </a>
+<!-- PortFolio-->
+
+<a href="https://portfolioelias.netlify.app">
+<img href="C:\Users\anton\Documents\Eliasdnt\img\logoalt_2.png" alt="Portfolio">
+</a>
+<!-- Texto Para visitacao das midias sociais-->
 
 ## GitHub Account Information
 <div align="center">
