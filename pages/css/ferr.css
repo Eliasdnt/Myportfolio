@@ -10,7 +10,28 @@
 .subtitle h3 {
   font-size: 3rem;
   margin-left: 80px;
+  font-weight: 400;
+  margin-bottom: 40px;
 }
+
+.tech-imgs{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+    box-shadow: 10px 5px 5px 10px #c2c2c2;
+    padding-bottom: 100px;
+}
+
+.tech-imgs img{
+    width: 40px;
+    margin-left: 80px;
+    margin-top: 80px;
+    
+
+}
+
 
 @keyframes fade {
   0% {
