@@ -13,6 +13,10 @@
   margin-left: 80px;
   font-weight: 400;
   margin-bottom: 40px;
+  background-image: linear-gradient(to right, #00008b, #007bff, #07ff30);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
 }
 
 .tech-imgs{
