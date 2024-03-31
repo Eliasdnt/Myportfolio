@@ -1,6 +1,6 @@
 .menu {
  max-width: 1200px;
-margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -31,3 +31,11 @@ margin: 0 auto;
   width: 24px;
 }
 
+.menu{
+  position: fixed;
+  min-width: 1200px;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
