@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:"Poppins", "Nunoto","Edu NSW ACT Foundation" , "PT Serif";
+}
+
+
+:root{
+    --colorbase:blueviolet;
+    --textcolor: #252525;
+
+}
+
+
+.hero{
+    background: url("img/pexels-lucie-liz-3165335.jpg");
+    filter: opacity(75%);
+    width: 100%;
+    height: 100vh;
+}
+
+.title-page{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 450px;
+}
+
+
+.title-page h1, p,span{
+    color: #fff;
+    font-size: 4rem;
+
+}
+.bg-title-page{
+    filter:opacity(90%);
+}
