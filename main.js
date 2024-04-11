@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loop: true,
       typeSpeed: 100,
       backSpeed: 70,
-      backDelay: 2000,
+      backDelay: 1000,
       onComplete: (self) => {
         const typedElement = self.el;
         typedElement.classList.add('animate__animated', 'animate__fadeOut');
