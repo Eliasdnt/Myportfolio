@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const typedElements = document.querySelectorAll('.typed');
   typedElements.forEach(typed => {
@@ -8,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       strings: typed_strings,
       loop: true,
       typeSpeed: 100,
-      backSpeed: 50,
+      backSpeed: 70,
       backDelay: 2000,
       onComplete: (self) => {
         const typedElement = self.el;
@@ -16,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           self.reset();
           typedElement.classList.remove('animate__animated', 'animate__fadeOut');
-        }, 1000); // Tempo de espera após a animação de desaparecimento
+        }, 100); 
       }
     });
   });

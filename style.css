@@ -34,6 +34,8 @@
     font-size: 4rem;
 
 }
-.bg-title-page{
-    filter:opacity(90%);
+.bg-title-page span {
+    background-image: linear-gradient(to right,#cc55ff, #53f5e7 );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
