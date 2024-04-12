@@ -95,7 +95,7 @@ span {
   margin-top: 100px;
   margin-left: -100px;
   background-color: #252525;
-  box-shadow: 0 0 2px 2px var(--textomini);
+  box-shadow: 0 0 2px 2px var(--textdetalhes);
 }
 .mentas img {
   width: 50px;
