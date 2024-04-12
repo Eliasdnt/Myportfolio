@@ -24,8 +24,9 @@
 }
 .menu {
   position: fixed;
-  top: 250px;
-  z-index: 10;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
 }
 
 .menu header nav ul {
@@ -45,8 +46,8 @@
 .title-page {
   max-width: 1400px;
   margin: 0 auto;
-  padding-top: 500px;
-  padding-left: 180px;
+  margin-left: 480px;
+  padding-top: 700px;
 }
 
 .title-page h1,
@@ -80,6 +81,52 @@ span {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+.title {
+  font-size: 3rem;
+}
+/* About */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #252525;
+  padding: 20px 40px;
+  opacity: 95%;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 2px var(--textcolor);
+  
+}
+
+
+/* .tag {
+  font-size: 1rem;
+  background-color: var(--colorbase);
+  opacity: 50%;
+  padding: 20px;
+  border-radius: 4px;
+} */
+
+.desc-about {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: justify;
+}
+
+.desc-about p {
+  font-size: 1rem;
+  color: var(--textcolor);
+}
+.desc-about span {
+  font-size: 1.5rem;
+}
+.desc-about li {
+  font-size: 1.5rem;
+  color: var(--textcolor);
+  list-style: circle;
+  margin-left: 45px;
+}
+
 
 /* Ferramentas */
 .mentas {
@@ -93,9 +140,9 @@ span {
   max-width: 1400px;
   margin: 0 auto;
   margin-top: 100px;
-  margin-left: -100px;
+  margin-left: -80px;
   background-color: #252525;
-  box-shadow: 0 0 2px 2px var(--textdetalhes);
+  box-shadow: 0 0 2px 2px var(--textcolor);
 }
 .mentas img {
   width: 50px;
@@ -103,25 +150,33 @@ span {
 
 /* Projetos */
 
-.projeto {
+.projetos {
   max-width: 1400px;
   margin: 0 auto;
-  margin-left: -100px;
+  margin-left: -80px;
+  margin-right: -80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  justify-content: center;
+  justify-items: center;
+ 
 }
 .card-projeto {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 40px;
   padding: 40px 20px;
   margin-top: 80px;
-  margin-left: -100px;
-  box-shadow: 0 0 2px 2px var(--textomini);
+  border-radius: 4px;
+  justify-content: center;
+  box-shadow: 0 0 2px 2px var(--textcolor);
 }
 .card-projeto img {
   object-fit: cover;
   border-radius: 4px;
   width: 100%;
-  height: 370px;
+  height: 210px;
 }
 .card-projeto h3 {
   color: var(--textcolor);
