@@ -12,11 +12,12 @@
 :root {
   --textcolor: #fff;
   --bg-color: #252525;
-  --colorbase: blueviolet;
+  --colorbase: rgb(175, 69, 255);
   --textdetalhes: #53f5e7;
   --textomini: #525252;
   --font-size-title: 4rem;
-  --font-family-title: "Nunito";
+  --font-family-title:"Nunito";
+  --font-family-title-span: "EDU NSW ACT Foundation";
 }
 
 .bg{
