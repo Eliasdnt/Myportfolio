@@ -1,28 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: "Poppins", "Nunito", "Edu NSW ACT Foundation", "PT Serif";
-}
-
-:root {
-  --textcolor: #fff;
-  --bg-color: #252525;
-  --colorbase: blueviolet;
-  --textdetalhes: #53f5e7;
-  --textomini: #525252;
-  --font-size-title: 4rem;
-  --font-family-title: "Nunito";
-}
-
-.bg{
-    
- background-image: linear-gradient(to top, #111 95%, var(--colorbase));
- padding-top: 100px;
-      
-}
 /* Hero, Menu */
 
 

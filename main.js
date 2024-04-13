@@ -1,6 +1,4 @@
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const typedElements = document.querySelectorAll('.typed');
   typedElements.forEach(typed => {
