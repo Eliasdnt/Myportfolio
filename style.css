@@ -11,9 +11,9 @@
 
 :root {
   --textcolor: #fff;
-  --bg-color: #252525;
-  --colorbase: rgb(175, 69, 255);
-  --textdetalhes: #53f5e7;
+  --bg-color: #280041;
+  --colorbase: #B292FF;
+  --textdetalhes: #5FB9B0;
   --textomini: #525252;
   --font-size-title: 4rem;
   --font-family-title:"Nunito";
@@ -22,7 +22,134 @@
 
 .bg{
     
- background-image: linear-gradient(to top, #111 95%, var(--colorbase));
+ background-color: #151515;
  padding-top: 100px;
+ padding-bottom: 100px;
       
 }
+
+.display{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #280041;
+  padding: 20px 40px;
+  border-radius: 0px;
+  justify-items: center;
+}
+ .display img{
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+ }
+
+.display h2{
+  font-size: var(--font-size-title);
+  color: var(--textcolor);
+  font-family: var(--font-family-title);
+}
+
+.display li{
+  color: var(--colorbase);
+  display: flex;
+  justify-content: space-between;
+}
+
+.display .span-display{
+  display: block;
+}
+.display .span-display span{
+  display: block;
+  font-size: 2rem;
+  margin-top: -25px;
+  margin-bottom: 40px;
+  color: var(--textomini);
+}
+.display .span-display img{
+  width: 30px;
+  border-radius:10px ;
+  
+
+}
+.display span{
+  color: var(--textcolor);
+}
+
+@media(max-width:1400px){
+  .display li span{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width:1100px){
+  .display h2{
+    font-size: 2rem;
+  }
+  .span-display span{
+    padding-top: 15px;
+  }
+}
+@media(max-width:900px){
+  .display{
+    grid-template-columns: 1fr;
+    justify-items: left;
+  }
+  .display h2{
+    font-size: 3rem;
+  }
+  .display li{
+    gap: 300px;
+  }
+}
+
+@media(max-width:700px){
+ 
+  .display li{
+    gap: 150px;
+  }
+}
+
+@media(max-width:580px){
+ 
+  .display li{
+    gap: 30px;
+  }
+}
+@media(max-width:480px){
+ 
+  .display li{
+    gap: 10px;
+  }
+  .display img{
+    display: none;
+  }
+}
+
+@media(max-width:480px){
+ 
+  .display li{
+    gap: 10px;
+  }
+  
+}
+@media(max-width:480px){
+ 
+  .display li{
+    display: inline-block;
+  }
+}
+  
+@media(max-width:480px){
+ 
+  .display h2,span{
+    font-size: 1.5rem;
+  }
+
+  #dev{
+    font-size: 1.5rem;
+  }
+}
+
+

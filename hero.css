@@ -1,8 +1,8 @@
 /* Hero, Menu */
 
 .hero-bg {
-  background: url("img/pexels-lucie-liz-3165335.jpg") center center;
-  filter: opacity(80%);
+  background: url("img/pexels-lucie-liz-3165335.jpg");
+  filter: opacity(85%);
   width: 100%;
   height: 100vh;
 }
@@ -22,7 +22,7 @@ p {
   color: var(--textcolor);
   font-family: var(--font-family-title-span);
   background-image: linear-gradient(
-    to right ,
+    to right,
     var(--colorbase),
     var(--textdetalhes)
   );
@@ -76,8 +76,11 @@ p {
   .flex-hero h1,
   p,
   span {
-    font-size: 2.5rem;
+    font-size:2rem;
   }
+.flex-hero span{
+    font-size: 2rem;
+}
 }
 @media (max-width: 430px) {
   .flex-hero {
