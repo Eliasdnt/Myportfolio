@@ -63,9 +63,6 @@ p {
   }
 }
 @media (max-width: 800px) {
-  .flex-hero {
-    padding-top: 300px;
-  }
   .flex-hero h1,
   p,
   span {
