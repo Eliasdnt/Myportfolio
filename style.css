@@ -52,7 +52,6 @@
 }
 
 .display li{
-  color: var(--colorbase);
   display: flex;
   justify-content: space-between;
 }
@@ -76,7 +75,14 @@
 .display span{
   color: var(--textcolor);
 }
-
+.tech{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.tech li img{
+  width: 40px;
+}
 @media(max-width:1450px){
   .display li span{
     font-size: 1rem;
@@ -97,6 +103,9 @@
     /* width: 95%; */
     display: none;
    
+  }
+  .tech img{
+    display: block;
   }
   .display li{
     gap: 400px;
@@ -131,29 +140,23 @@
 }
 @media(max-width:480px){
  
-  .display li{
-    font-size: 0.8rem;
-    gap: 40px;
-  }
-  .display img{
-    display: none;
+ 
+  .tech img{
+    display: block;
+    width: 10px;
   }
 
-  .display li{
-    display: inline-block;
-    font-size: 0.8rem;
-  }
+  
 
   .display h2,span{
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
+
   #dev{
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-top: 5px;
 
   }
 
 
 }
-
-
