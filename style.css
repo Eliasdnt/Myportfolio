@@ -1,4 +1,5 @@
 @import 'hero.css';
+@import 'tag.css';
 
 * {
   margin: 0;
@@ -28,135 +29,38 @@
       
 }
 
-.display{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: #280041;
-  padding: 20px 40px;
-  border-radius: 0px;
-  justify-items: center;
-}
- .display img{
-  object-fit: cover;
-  width: 100%;
-  border-radius: 10px;
- }
-
-.display h2{
-  font-size: var(--font-size-title);
-  color: var(--textcolor);
-  font-family: var(--font-family-title);
-}
-
-.display li{
-  display: flex;
-  justify-content: space-between;
-}
-
-.display .span-display{
-  display: block;
-}
-.display .span-display span{
-  display: block;
-  font-size: 2rem;
-  margin-top: -25px;
-  margin-bottom: 40px;
+.title{
+  font-size: 3rem;
   color: var(--colorbase);
-}
-.display .span-display img{
-  width: 20px;
-  /* border-radius:10px ; */
-  
+  margin-left: 100px;
+  margin-top: 100px;
 
 }
-.display span{
-  color: var(--textcolor);
+
+@media(max-width: 700px){
+  .title{
+    text-align: center;
+    margin-left: 0;
+  }
 }
-.tech{
+
+
+footer{
+  background-color: #280041;
+  padding-bottom: 50px;
+}
+.footer{
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.tech li img{
-  width: 40px;
-}
-@media(max-width:1450px){
-  .display li span{
-    font-size: 1rem;
-  }
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 50px;
 }
 
-@media(max-width:1000px){
-  .display h2{
-    font-size: 2rem;
-  }
-  .display li{
-    gap: 400px;
-  }
-  .span-display span{
-    padding-top: 15px;
-  }
-    .display img{
-    /* width: 95%; */
-    display: none;
-   
-  }
-  .tech img{
-    display: block;
-  }
-  .display li{
-    gap: 400px;
-  }
-  .display{
-    grid-template-columns: 1fr;
-  }
+.footer li{
+ color: var(--colorbase);
 }
-@media(max-width:900px){
-  .display h2{
-    font-size: 2rem;
-  }
-
-   #dev{
-    font-size: 1.5rem;
-  }
-}
-
-@media(max-width:780px){
- 
-  .display li{
- 
-   gap: 300px;
-  }
-}
-
-@media(max-width:580px){
- 
-  .display li{
-    gap: 80px;
-  }
-}
-@media(max-width:480px){
- 
- 
-  .tech img{
-    display: block;
-    width: 10px;
-  }
-
+.footer li img{
+ width: 40px;
+  display: flex;
   
-
-  .display h2,span{
-    font-size: 1.2rem;
-  }
-
-  #dev{
-    font-size: 1rem;
-    margin-top: 5px;
-
-  }
-
-
 }
