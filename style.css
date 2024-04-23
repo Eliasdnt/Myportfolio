@@ -77,7 +77,7 @@ footer{
   align-items: center;
   margin-top: 100px;
   padding: 30px;
-  box-shadow: 2px 4px 6px 1px var(--colorbase);
+  box-shadow: 2px 4px 6px 1px var(--textdetalhes);
 
 
 }
