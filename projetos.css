@@ -1,12 +1,13 @@
 .cont-projetos{
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    display: grid;
     max-width: 1000px;
     margin: 0 auto;
     margin-top: 100px;
     padding: 20px;
     box-shadow: 2px 4px 6px 1px var(--textdetalhes);
+    border-radius: 10px;
 
 }
 .cont-projetos img{
