@@ -1,6 +1,6 @@
 @import 'hero.css';
 @import 'tag.css';
-
+@import 'projetos.css';
 * {
   margin: 0;
   padding: 0;
@@ -55,6 +55,15 @@ footer{
   align-items: center;
   padding-top: 50px;
 }
+/* .grid-footer{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5rem;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items:center ;
+} */
 
 .footer li{
  color: var(--colorbase);
@@ -63,6 +72,9 @@ footer{
  width: 40px;
   display: flex;
   
+}
+.footer span{
+  font-size: 1rem;
 }
 
 
