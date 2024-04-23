@@ -16,7 +16,7 @@ p {
   font-size: var(--font-size-title);
   color: var(--textcolor);
   font-family: var(--font-family-title);
-}
+} 
 .flex-hero span {
   font-size: var(--font-size-title);
   color: var(--textcolor);
