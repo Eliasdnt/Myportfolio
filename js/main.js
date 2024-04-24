@@ -22,3 +22,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+function scrollSuave() {
+    const linksInternos = document.querySelectorAll(".js-menu a[href^='#']");
+    console.log(linksInternos);
+
+    function scrollToSection(event) {
+        event.preventDefault();
+        const href = event.currentTarget.getAttribute('href'); // Fixed typo in currentTarget
+        console.log(href);
+        const section = document.querySelector(href);
+
+        if (section) { // Added a check if section exists
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                duration: 1300,
+            });
+        }
+    }
+
+    linksInternos.forEach((link) => {
+        link.addEventListener('click', scrollToSection); // Added scrollToSection as event listener
+    });
+}
+
+scrollSuave();
