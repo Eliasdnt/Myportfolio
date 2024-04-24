@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>         
  
     <meta charset="UTF-8" />
@@ -16,8 +16,38 @@
     <title>Elias - Desenvolvedor WEB</title>
   </head>
 
-  <body>
-    <div class="hero-bg">
+<body>
+<header>
+      <nav>
+          <ul class="menu-lateral js-menu">
+            <li>
+              <a href="#hero"><img src="img/garagem.svg" alt=""></a>
+            </li> 
+             <li>
+              <a href="#sobremim"><img src="img/man-svgrepo-com.svg" alt=""></a>
+            </li>
+            <li>
+              <a href="#tools"><img src="img/tools-svgrepo-com.svg" alt=""></a>
+            </li>
+            <li>
+              <a href="#proj"><img src="img/codigo-de-exibicao.svg" alt=""></a>
+            </li>
+          
+            <li>
+              <a href="#curriculum"><img src="img/contact-details-svgrepo-com.svg" alt=""></a>
+            </li>
+            <li>
+             <a href="#contato"> <img src="img/caneta-de-comentarios.svg" alt=""></a>
+            </li>
+          
+        </ul>
+      </nav>
+
+    </header>
+
+    <div id="hero" class="hero-bg">
+    
+
       <div class="flex-hero">
         <h1>
           Antônio Elias
@@ -70,7 +100,7 @@
       </section>
 
       <section>
-        <h2 class="title">Sobre Mim</h2>
+        <h2 id="sobremim" class="title">Sobre Mim</h2>
         <div class="about">
           <div>
             <img src="img/myfoto.jpg" alt="" />
@@ -108,12 +138,61 @@
         </div>
       </section>
 
-      <section>
-        <h2 class="title">Curriculum</h2>
+    
+
+      <section id="tools">
+        <h2 class="title">Linguagens e Ferramentas</h2>
+
+      <div style="max-width: 900px; margin: 0 auto; margin-top: 100px;"> 
+       <span>Linguagens e Ferramentas, que uso no meu dia a dia.</span>
+      <div class="flex-fer">  <img src="img/html5.svg" alt="">
+        <img src="img/css3.svg" alt="">
+        <img src="img/js.svg" alt="">
+        <img src="img/angular-outlined-svgrepo-com.svg" alt="">
+        <img src="img/typescript.svg" alt="">
+        <img src="img/node-js.svg" alt="">
+        <img src="img/github_2.svg" alt="">
+        <img src="img/visual-basic.svg" alt="">
+        <img src="img/terminal-bash-svgrepo-com.svg" alt="">
+        <img src="img/windows.svg" alt="">
+        </div>
+
+</div> 
+
+        
+
+
+      <div style="max-width: 900px; margin: 0 auto; margin-top: 80px;  "> 
+      <span>Linguagens e Ferramentas, que já usei.</span>
+        <div class="flex-fer"><img src="img/java-svgrepo-com.svg" alt="">
+        <img src="img/mysql.svg" alt="">
+        <img src="img/python.svg" alt="">
+        <img src="img/php.svg" alt="">
+        </div>
+</div>
+
+
+
       </section>
 
-      <section>
+
+
+      <section id="proj">
         <h2 class="title">Projetos</h2>
+        <div class="projeto">
+
+            <section class="cont-projetos">
+            <div>
+              <img src="img/Imagem do WhatsApp de 2024-04-23 à(s) 15.47.52_e9a3a849.jpg" alt="">
+              
+            </div>
+             <div class="desc">
+             <span class="span-title-desc">Animais Fantásticos</span>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione ad vel cum perferendis iste. Quae sequi esse perspiciatis explicabo eaque? </p>
+              <ul class="desc-ul"><li>HTML</li><li>CSS</li> <li>Javasrcipt</li></ul>
+              <a href="https://eliasdnt.github.io/Animais-Fantasticos/">Veja Projeto</a>
+            </div>
+            </section>
         <section class="cont-projetos">
  
             <div>
@@ -129,7 +208,7 @@
 
         </section>
 
-        <section class="cont-projetos">
+        <section class=" cont-projetos">
             <div>
               <img src="img/rocketseat.png" alt="">
               
@@ -140,20 +219,11 @@
               <ul class="desc-ul"><li>HTML</li><li>CSS</li></ul>
               <a href="https://eliasdnt.github.io/nftRocketseat/">Veja Projeto</a>
             </div>
-            </div>
+          
             </section>
-            <section class="cont-projetos">
-            <div>
-              <img src="img/Imagem do WhatsApp de 2024-04-23 à(s) 15.47.52_e9a3a849.jpg" alt="">
-              
-            </div>
-             <div class="desc">
-             <span class="span-title-desc">Animais Fantásticos</span>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione ad vel cum perferendis iste. Quae sequi esse perspiciatis explicabo eaque? </p>
-              <ul class="desc-ul"><li>HTML</li><li>CSS</li> <li>Javasrcipt</li></ul>
-              <a href="https://eliasdnt.github.io/Animais-Fantasticos/">Veja Projeto</a>
-            </div>
-            </section>
+
+
+
             <section class="cont-projetos">
             <div>
               <img src="img/Imagem do WhatsApp de 2024-04-23 à(s) 16.59.09_b0042de3.jpg" alt="">
@@ -168,16 +238,68 @@
             </div>
             </section>
 
+             <section class="cont-projetos">
+            <div>
+              <img src="img/Imagem do WhatsApp de 2024-04-24 à(s) 11.40.18_4b9f7f40.jpg" alt="">
+              
+            </div>
+
+              <div class="desc">
+             <span class="span-title-desc">Tela de Login Rocketseat</span>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione ad vel cum perferendis iste. Quae sequi esse perspiciatis explicabo eaque? </p>
+              <ul class="desc-ul"><li>HTML</li><li>CSS</li></ul>
+              <a href="https://eliasdnt.github.io/Porfolio-lobo-origamid/">Veja Projeto</a>
+            </div>
+            </section>
+
            
- 
+ </div>
         </section>
+      
+
+  ..<section id="curriculum">
+        <h2 class="title">Curriculum</h2>
+        
+          <div class="form-academica">
+            <div >
+             <h4>Formação Acadêmica</h4> 
+              <h6>Bacheralado em Ciências da Computação</h6>
+              <span>Instituto Federal de Educação, Ciência e Tecnologia do Ceará - IFCE</span>
+              <p id="periodo">2023 - Em curso</p>
+              <p>Escolher um curso como Ciência da Computação é como entrar em um mundo de possibilidades infinitas. Me encantei com a tecnologia e como ela pode transformar o nosso dia a dia. A computação é mais do que apenas programação, é uma forma de pensar, de resolver problemas e de criar soluções para problemas de forma inovadora.</p>
+
+              <h6>Técnico em informática</h6>
+              <span>EEEP Raimundo Célio Rodrigues</span>
+              <p id="periodo">2020 - 2022</p>
+              <p>O Curso Técnico em Informática é uma excelente oportunidade para quem busca uma formação sólida na área de tecnologia. Com duração de 3 anos, este curso é destinado a pessoas que querem concluir o ensino médio e desejam adquirir conhecimentos específicos para atuar no mercado de trabalho.</p>
+
+              
+              <h6>Idiomas - Inglês</h6>
+              <span>Centro de Línguas</span>
+              <p id="periodo">2023 - Em curso</p>
+              <p>Durante o curso, busco aprimorar minha capacidade de compreender e produzir textos complexos, participar de atividades de conversação para melhorar minha oralidade e aprimorar meu vocabulário em diversos contextos. Este curso me proporciona uma base sólida no idioma e me prepara para interagir eficientemente em ambientes profissionais e acadêmicos onde o inglês é a língua principal.</p>
+            </div>
+            <div id="border">
+             <h4>Experiência Profissional</h4> 
+              <h6>Front-End Dev</h6>
+              <span>Núcleo de Desenvolvimento de Software (NDS)</span>
+              <p id="periodo">2024 - Em curso</p>
+              <p>O NDS é um Laboratório de desenvolvimento de sistemas de renome dentre o meio acadêmico, um local que visa a integração e participação de todos ali inseridos, buscando assim o crescimento profissional de todos os envolvidos.<br><br>Este meu estágio voluntário em desenvolvimento front-end, onde tenho a oportunidade de mergulhar no mundo da programação web. Irei participar em projetos, onde posso aplicar meus conhecimentos em HTML, CSS e JavaScript para criar interfaces responsivas e interativas. A experiência é enriquecedora, proporcionando um ambiente de aprendizado prático e a chance de trabalhar em equipe, aprimorando minhas habilidades técnicas e de comunicação. Este estágio reforça meu interesse pela área e me motivou a continuar buscando conhecimento e crescimento profissional na área de desenvolvimento front-end.</p>
+           
+           <h6>Estágio em TI</h6>
+              <span>Vicunha Têxtil S/a</span>
+              <p id="periodo">Agosto a Novembro  - 2022</p>
+              <p>Reconhecida mundialmente pelos elevados padrões de qualidade e sustentabilidade, a Vicunha é uma multinacional brasileira presente na América Latina, Europa e Ásia. Com mais de 50 anos de mercado, é referência global em soluções jeanswear.<br><br>Criação de usuário em sistemas locais, manutenção via base de dados, comunicação entre usuários da empresa, resolução de problemas de TI, criação de relatórios com base em dados vindo de cosultas via base de dados, estas atividades estavam dentro do meu plano de atuação.</p>
+
+            </div>
+          </div>
+
+
+
       </section>
 
-      <section>
-        <h2 class="title">Minhas Techs e Ferramentas</h2>
-      </section>
 
-      <section>
+      <section id="contato">
         <h2 class="title">Contato</h2>
       </section>
     </main>

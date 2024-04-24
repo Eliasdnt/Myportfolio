@@ -1,7 +1,7 @@
 /* Hero, Menu */
 
 .hero-bg {
-  background: url("img/pexels-lucie-liz-3165335.jpg") center center;
+  background: url("img/pexels-lucie-liz-3165335.jpg") ;
   filter: opacity(85%);
   width: 100%;
   height: 100vh;
