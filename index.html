@@ -73,7 +73,6 @@
                   ><img src="./img/linkedin.svg" alt=""
                 /></a>
               </li>
-              <li><img src="./img/google.svg" alt="" /></li>
             </ul>
           </nav>
         </header>
@@ -301,6 +300,21 @@
 
       <section id="contato">
         <h2 class="title">Contato</h2>
+
+          <h4 class="h4-form">Vamos Conversar? Mande um Email para mim!</h4>
+       <form method="POST" id="form">
+        <input type="hidden" name="access_key" value="df5168de-2389-4e22-8603-a1b42cc33844">
+
+    <div class="flex-form">  <div id="name">  <label for="">Nome Completo</label> <input type="text" name="name" required></div>
+      <div><label for="">Email</label> <input type="text" name="email" required></div></div>
+        <div><label for="">Telefone</label><input type="text" name="phone" required></div>
+       <div><label for="">Mensagem:</label> <textarea name="message" rows="10" cols="80" required></textarea></div>
+        <div style="color: var(--textdetalhes);" id="result"></div>
+
+       <button type="submit">Enviar</button>
+</form>
+
+      
       </section>
     </main>
 
@@ -325,12 +339,17 @@
               ><img src="./img/linkedin.svg" alt=""
             /></a>
           </li>
-          <li><img src="./img/google.svg" alt="" /></li>
         </ul>
       </nav>
     </footer> 
+
+
    <script src="js/main.js"></script>
    <script src="js/typed.js"></script>
+
+
+
+
 
 
   </body>
