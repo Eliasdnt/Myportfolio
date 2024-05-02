@@ -1,6 +1,8 @@
 @import 'hero.css';
 @import 'tag.css';
 @import 'projetos.css';
+
+
 * {
   margin: 0;
   padding: 0;
@@ -297,6 +299,9 @@ footer{
   text-align: center;
   margin-top: 100px;
 }
+/* #form input{
+  width: 100%;
+} */
 #form input, textarea{
   background-color: var(--textomini);
   color: #280041;
@@ -304,6 +309,7 @@ footer{
   border-radius: 4px;
   border: none;
   display: block;
+  width: 90%;
   
 }
 
@@ -329,12 +335,14 @@ footer{
   gap: 60px;
   margin-top: 40px;
 }
-#form label, input{
-  padding-top: 10px;
-}
+
+
+
+
 @media (max-width:800px) {
   #form,.h4-form{
     margin: 40px;
+   
   }
 .flex-form {
   display: block;
@@ -345,6 +353,7 @@ footer{
 #form label, input{
   padding-top: 10px;
 }
+
   
 }
 

@@ -92,42 +92,9 @@ form.addEventListener('submit', function(e) {
         });
 });
 
-function ajustarCols() {
-  const larguraTela = window.innerWidth;
-  let cols = 0;
-
-  if (larguraTela >= 1000) {
-    cols = 85; // Ajuste conforme necessário
-    
-  } else if(larguraTela <=1000 && larguraTela >= 700){
-        cols = 50
-    } 
-    else if (larguraTela <= 700 && larguraTela >= 480) {
-        
-        cols = 40;
-  }
-  else if (larguraTela <= 480 && larguraTela >= 390) {
-         cols = 30;
-  }
-  else if(larguraTela <= 390){
-        cols =20;
-  }
-
-  const textareas = document.querySelectorAll('textarea[cols]');
-  for (const textarea of textareas) {
-    textarea.cols = cols;
-  }
-}
-
-window.addEventListener('load', ajustarCols);
-window.addEventListener('resize', ajustarCols);
 
 
 
 
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
 
-menuToggle.addEventListener('click', function () {
-  menu.classList.toggle('show');
-});
+

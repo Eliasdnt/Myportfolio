@@ -305,10 +305,10 @@
        <form method="POST" id="form">
         <input type="hidden" name="access_key" value="df5168de-2389-4e22-8603-a1b42cc33844">
 
-    <div class="flex-form">  <div id="name">  <label for="">Nome Completo</label> <input type="text" name="name" required></div>
-      <div><label for="">Email</label> <input type="text" name="email" required></div></div>
-        <div><label for="">Telefone</label><input type="text" name="phone" required></div>
-       <div><label for="">Mensagem:</label> <textarea name="message" rows="10" cols="80" required></textarea></div>
+       <label for="">Nome Completo</label> <input type="text" name="name" placeholder="Digite seu nome" required>
+      <label for="">Email</label> <input type="text" name="email" placeholder="Digite seu Email" required></div>
+       <label for="">Telefone</label><input type="text" name="phone" placeholder="+99 (99) 12345-1234" required>
+      <label for="">Mensagem:</label> <textarea name="message" rows="10" id="meuTextarea" cols="30" placeholder="Sua Mensagem aqui para mim!"></textarea>
         <div style="color: var(--textdetalhes);" id="result"></div>
 
        <button type="submit">Enviar</button>
