@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector(".js-menu");
   const btn = document.querySelector('#btn'); 
   const links = menu.querySelectorAll('a'); 
-    const main = document.querySelector('main');
+// const main = document.querySelector('main'); Efeito de Blur após abrir, irei adicionar
   
 
   function toggleMenu() {
