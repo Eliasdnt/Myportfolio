@@ -38,7 +38,7 @@ function scrollSuave() {
             section.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start',
-                duration: 1300,
+                duration: 2500,
             });
         }
     }
@@ -93,8 +93,32 @@ form.addEventListener('submit', function(e) {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector(".js-menu");
+  const btn = document.querySelector('#btn'); 
+  const links = menu.querySelectorAll('a'); 
+    const main = document.querySelector('main');
+  
 
+  function toggleMenu() {
+    menu.classList.toggle('ativo');
+  }
+  function closeMenu(event) {
+    if (!menu.contains(event.target) && !btn.contains(event.target)) {
+      menu.classList.remove('ativo');
+    }
+  }
 
+  btn.addEventListener("click", toggleMenu);
+  btn.addEventListener("touchstart", toggleMenu);
+  btn.addEventListener("touchend", toggleMenu);
+  
+  document.addEventListener("click", closeMenu);
 
-
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('ativo');
+    });
+  });
+});
 
