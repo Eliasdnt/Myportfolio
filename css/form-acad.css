@@ -41,12 +41,16 @@
   padding-left: 40px;
 }
 
-@media(max-width: 1100px){
+
+@media (max-width: 1400px) {
   .form-academica span{
   color:var(--textdetalhes);
   font-style: italic;
   font-size: 1.2rem;
 }
+}
+@media(max-width: 1200px){
+  
  .form-academica{
   grid-template-columns: 1fr;
   margin: 100px;
