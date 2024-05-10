@@ -1,0 +1,54 @@
+@import 'hero.css';
+@import 'tag.css';
+@import 'projetos.css';
+@import 'title.css';
+@import 'menu.css';
+@import 'aboutme.css';
+@import 'form-acad.css';
+@import 'techs.css';
+@import 'contato.css';
+@import 'footer.css';
+
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Poppins", "Nunito", "Edu NSW ACT Foundation", "PT Serif";
+}
+
+:root { 
+  --textcolor: #fff;
+  --bg-color: #f5e5ff;
+  --colorbase: #B292FF;
+  --textdetalhes: #5FB9B0;
+  --textomini: #b0b0b0;
+  --font-size-title: 4rem;
+  --font-family-title:"Nunito";
+  --font-family-title-span: "EDU NSW ACT Foundation";
+}
+
+.bg{
+  background-color:  rgba(37, 37, 37, 1);
+  padding-top: 150px;
+}
+
+section[data-section]{
+  opacity: 0;
+}
+section[data-section].anima{
+  animation: animation 1.2s forwards ;
+}
+
+@keyframes animation {
+    from {
+        opacity: 0;
+        transform: translate3d(-30px,0,0)
+    }
+    to {
+        opacity: 1;
+        transform:  translate3d(0,0,0)
+    }
+}
