@@ -122,3 +122,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[data-section]');
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop; // Obtém a posição superior da seção
+            const sectionHeight = section.clientHeight; // Obtém a altura da seção
+            const scrollY = window.scrollY; // Obtém a posição de rolagem vertical
+
+            // Verifica se a seção está visível no viewport
+            if (scrollY >= sectionTop - 180 && scrollY < sectionTop + sectionHeight) {
+                section.classList.add('anima'); // Adiciona a classe 'anima' à seção visível
+           } // } else {
+            //     section.classList.remove('anima'); // Remove a classe 'anima' das seções não visíveis
+            // }
+        });
+    });
+});
+
+
+
+
+
