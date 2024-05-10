@@ -8,6 +8,8 @@
   justify-items: start;
   padding: 20px 15px;
   border-radius: 15px;
+    padding-bottom: 100px;
+
 }
  .h4-form{
   font-size: 2rem;
@@ -60,15 +62,18 @@ color: var(--textdetalhes);
 
 @media (max-width:800px) {
   #form,.h4-form{
-    margin: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    /* padding-bottom: 100px; */
+
    
   }
 .flex-form {
   display: block;
 }
-.flex-form div{
+/* .flex-form div{
   margin-top: 20px;
-}
+} */
 #form label, input{
   padding-top: 10px;
 }
