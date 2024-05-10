@@ -1,0 +1,75 @@
+/* Formação Acadêmica */
+
+.form-academica{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top:100px ;
+}
+
+.form-academica h4{
+  font-size: 2.5rem;
+  color: var(--colorbase);
+  /* margin-left: 10px; */
+}
+
+.form-academica h6{
+  font-size: 1.75rem;
+  color: beige;
+  margin-top: 40px;
+}
+.form-academica span{
+  color:var(--textdetalhes);
+  font-style: italic;
+}
+.form-academica p {
+  font-size: 1rem;
+  color: var(--textomini);
+  text-align: justify;
+}
+#periodo{
+  color: beige;
+  font-size: 1.4rem;
+  margin-top: 20px ;
+  margin-bottom: 20px ;
+
+}
+#border{
+  border-left: 1px solid var(--textdetalhes);
+  padding-left: 40px;
+}
+
+@media(max-width: 1100px){
+  .form-academica span{
+  color:var(--textdetalhes);
+  font-style: italic;
+  font-size: 1.2rem;
+}
+ .form-academica{
+  grid-template-columns: 1fr;
+  margin: 100px;
+ }
+ #border{
+  border-left: none;
+  padding-left: 0;
+ }
+}
+
+
+
+@media(max-width: 800px){
+ .form-academica{
+  margin: 40px;
+ }
+ .form-academica h4{
+  font-size: 1.75rem;
+ }
+ .form-academica h6{
+  font-size: 1.25rem;
+ }
+ .form-academica span{
+  font-size: 1.1rem;
+ }
+}

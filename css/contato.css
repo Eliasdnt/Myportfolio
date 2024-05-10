@@ -1,0 +1,77 @@
+/* Form de Contato */
+#form{
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 25px;
+  justify-items: start;
+  padding: 20px 15px;
+  border-radius: 15px;
+}
+ .h4-form{
+  font-size: 2rem;
+  color:beige;
+  text-align: center;
+  margin-top: 100px;
+}
+/* #form input{
+  width: 100%;
+} */
+#form input, textarea{
+  background-color: var(--textomini);
+  color: #280041;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: block;
+  width: 90%;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.5);
+
+  
+}
+
+#form label{
+color: var(--textdetalhes);
+
+}
+#form #name{
+  grid-column: 1/-1;
+}
+
+#form button{
+  background-image: linear-gradient(to left, var(--colorbase), var(--textdetalhes));
+  padding: 20px 100px;
+  border-radius: 10px;
+  border: none;
+}
+
+.flex-form{
+  display: flex; 
+  gap: 60px;
+  margin-top: 40px;
+}
+
+#form input:focus{
+  border: 2px solid var(--textdetalhes);
+  /* border-color: ; */
+}
+
+
+
+@media (max-width:800px) {
+  #form,.h4-form{
+    margin: 40px;
+   
+  }
+.flex-form {
+  display: block;
+}
+.flex-form div{
+  margin-top: 20px;
+}
+#form label, input{
+  padding-top: 10px;
+}
+
+  
+}

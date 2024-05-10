@@ -1,0 +1,38 @@
+#tools img{
+  width: 50px;
+  margin: 30px;
+  margin-top: 60px;
+ 
+}
+#tools span{
+display: block;
+text-align: center;
+color: beige;
+font-size: 2rem;
+
+}
+
+.flex-fer{
+display: grid; 
+grid-template-columns: 1fr 1fr 1fr 1fr;
+justify-items: center;
+}
+
+@media (max-width:1000px) {
+  #tools{
+    margin: 40px;
+  }
+
+}
+@media (max-width:600px) {
+  .flex-fer{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+@media (max-width:380px) {
+  .flex-fer{
+    grid-template-columns: 1fr 1fr ;
+  }
+}
