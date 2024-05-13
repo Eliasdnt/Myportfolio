@@ -13,9 +13,14 @@ font-size: 2rem;
 }
 
 .flex-fer{
-display: grid; 
-grid-template-columns: 1fr 1fr 1fr 1fr;
+display:flex; 
+/* flex-wrap: wrap; */
+overflow-x: hidden;
+max-width: 440px;
 justify-items: center;
+margin: 0 auto;
+/* transform: translateX(0); */
+/* transition: transform 2s ease-in-out; */
 }
 
 @media (max-width:1000px) {
@@ -26,13 +31,13 @@ justify-items: center;
 }
 @media (max-width:600px) {
   .flex-fer{
-    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr 1fr; */
   }
 
 }
 
 @media (max-width:380px) {
   .flex-fer{
-    grid-template-columns: 1fr 1fr ;
+    /* grid-template-columns: 1fr 1fr ; */
   }
 }

@@ -1,5 +1,7 @@
 /* Formação Acadêmica */
-
+#curriculum{
+  margin-top: 100px;
+}
 .form-academica{
   display: grid;
   grid-template-columns: 1fr 1fr;
