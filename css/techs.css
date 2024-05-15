@@ -1,12 +1,10 @@
 #tools h4{
   color: beige;
 }
-#tools span{
-  color: beige;
-}
+
 
 #tools .swiper{
-  width: 300px;
+  width: 400px;
   /* border-radius: 15px; */
 }
 
@@ -64,12 +62,26 @@
 .grid-tools{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   margin-top: 100px;
   max-height: 150px;
+
 }
 
 .grid-tools span{
-  color: #5FB9B0;
+  background-image: linear-gradient(to bottom, #111, #5FB9B0, #B292FF);
+  background-clip: text;
+  color: transparent;
+  font-size: 4rem;
+}
+
+.flex-tools{
+  display: flex; 
+  gap: 40px; 
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  max-height: 150px;
 }
