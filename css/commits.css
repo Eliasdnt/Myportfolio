@@ -1,0 +1,153 @@
+:root {
+    --primary: #B292FF;
+    --secondary: #5FB9B0;
+    --dark: #2d2d2d;
+    --light: #f5e5ff;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.back-home {
+    padding: 20px;
+}
+
+.back-home a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.back-home a:hover {
+    color: var(--primary);
+}
+
+.commits-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.commits-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.commits-header h1 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.commits-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.commits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.commit-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--secondary);
+    transition: transform 0.3s;
+}
+
+.commit-card:hover {
+    transform: translateX(10px);
+}
+
+.commit-icon {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.commit-details {
+    flex: 1;
+}
+
+.commit-date {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.commit-message {
+    margin: 5px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.commit-repo {
+    font-size: 0.9rem;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.commit-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: #666;
+    border: 1px solid #ddd;
+    padding: 5px 12px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.commit-link:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.github-stats {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.stats-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    padding: 50px;
+}
+
+@media (max-width: 600px) {
+    .commits-header h1 {
+        font-size: 2rem;
+    }
+    .commit-card {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

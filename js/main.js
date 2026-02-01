@@ -94,55 +94,92 @@ form.addEventListener('submit', function(e) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Configuração da animação de scroll
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('anima');
+        // Opcional: Parar de observar após animar
+        // observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('[data-section]').forEach(section => {
+    observer.observe(section);
+  });
+
+  // Toggle do Menu
   const menu = document.querySelector(".js-menu");
   const btn = document.querySelector('#btn'); 
   const links = menu.querySelectorAll('a'); 
-// const main = document.querySelector('main'); Efeito de Blur após abrir, irei adicionar
-  
 
   function toggleMenu() {
     menu.classList.toggle('ativo');
-  }
-  function closeMenu(event) {
-    if (!menu.contains(event.target) && !btn.contains(event.target)) {
-      menu.classList.remove('ativo');
+    const icon = btn.querySelector('i');
+    if (menu.classList.contains('ativo')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+      document.body.style.overflow = 'hidden'; // Previne scroll quando menu está aberto
+    } else {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+      document.body.style.overflow = '';
     }
   }
 
-  btn.addEventListener("click", toggleMenu);
-  btn.addEventListener("touchstart", toggleMenu);
-  btn.addEventListener("touchend", toggleMenu);
+  function closeMenu() {
+    menu.classList.remove('ativo');
+    const icon = btn.querySelector('i');
+    if (icon) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
   
-  document.addEventListener("click", closeMenu);
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && !btn.contains(event.target) && menu.classList.contains('ativo')) {
+      closeMenu();
+    }
+  });
 
   links.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('ativo');
-    });
+    link.addEventListener('click', closeMenu);
   });
 });
 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section[data-section]');
+// Scroll Suave Melhorado
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
         
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop; // Obtém a posição superior da seção
-            const sectionHeight = section.clientHeight; // Obtém a altura da seção
-            const scrollY = window.scrollY; // Obtém a posição de rolagem vertical
+        if (targetElement) {
+            const headerOffset = 100; // Compensação para header fixo se houver
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-            // Verifica se a seção está visível no viewport
-            if (scrollY >= sectionTop - 180 && scrollY < sectionTop + sectionHeight) {
-                section.classList.add('anima'); // Adiciona a classe 'anima' à seção visível
-           } // } else {
-            //     section.classList.remove('anima'); // Remove a classe 'anima' das seções não visíveis
-            // }
-        });
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
     });
 });
+
 
 
 

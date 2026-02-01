@@ -20,7 +20,7 @@
 }
 
 :root { 
-  --textcolor: #fff;
+  --textcolor: #000;
   --bg-color: #f5e5ff;
   --colorbase: #B292FF;
   --textdetalhes: #5FB9B0;
@@ -30,25 +30,22 @@
   --font-family-title-span: "EDU NSW ACT Foundation";
 }
 
-.bg{
-  background-color: rgba(0.3725, 0.7255, 0.6902, 1);
-  padding-top: 150px;
+.bg {
+  background: linear-gradient(135deg, #f5e5ff 0%, #e0f2f1 100%);
+  padding-top: 50px;
 }
 
-section[data-section]{
+section[data-section] {
   opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
 }
-section[data-section].anima{
-  animation: animation 1.2s forwards ;
+
+section[data-section].anima {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes animation {
-    from {
-        opacity: 0;
-        transform: translate3d(-30px,0,0)
-    }
-    to {
-        opacity: 1;
-        transform:  translate3d(0,0,0)
-    }
+  /* Removed old animation in favor of transition directly on class */
 }
