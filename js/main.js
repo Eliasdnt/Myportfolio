@@ -1,187 +1,162 @@
+/* =============================================================================
+   COMPORTAMENTOS BASE
+   - Header sticky com mudança ao rolar
+   - Menu mobile
+   - Link de navegação ativo conforme a seção visível
+   - Ano no footer
+   - Download de CV (com fallback amigável)
+   ========================================================================== */
+(function () {
+  "use strict";
 
-document.addEventListener('DOMContentLoaded', () => {
-  const typedElements = document.querySelectorAll('.typed');
-  typedElements.forEach(typed => {
-    let typed_strings = typed.getAttribute('data-typed-items');
-    typed_strings = typed_strings.split(',');
+  function init() {
+    initHeaderScroll();
+    initMobileMenu();
+    initActiveNav();
+    initYear();
+    initCvDownload();
+  }
 
-    new Typed(typed, {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 70,
-      backDelay: 1000,
-      onComplete: (self) => {
-        const typedElement = self.el;
-        typedElement.classList.add('animate__animated', 'animate__fadeOut');
-        setTimeout(() => {
-          self.reset();
-          typedElement.classList.remove('animate__animated', 'animate__fadeOut');
-        }, 100); 
+  /* ---------- Header muda ao rolar -------------------------------------- */
+  function initHeaderScroll() {
+    var header = document.getElementById("site-header");
+    if (!header) return;
+    var nav = header.querySelector("nav");
+    function onScroll() {
+      if (window.scrollY > 16) {
+        nav.classList.add("shadow-soft", "!bg-surface/90");
+      } else {
+        nav.classList.remove("shadow-soft", "!bg-surface/90");
       }
-    });
-  });
-});
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
+  /* ---------- Menu mobile ----------------------------------------------- */
+  function initMobileMenu() {
+    var btn = document.getElementById("menu-btn");
+    var menu = document.getElementById("mobile-menu");
+    if (!btn || !menu) return;
+    var icon = btn.querySelector("i");
 
-function scrollSuave() {
-    const linksInternos = document.querySelectorAll(".js-menu a[href^='#']");
-    console.log(linksInternos);
-
-    function scrollToSection(event) {
-        event.preventDefault();
-        const href = event.currentTarget.getAttribute('href'); // Fixed typo in currentTarget
-        console.log(href);
-        const section = document.querySelector(href);
-
-        if (section) { // Added a check if section exists
-            section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-                duration: 2500,
-            });
-        }
+    function open() {
+      menu.classList.remove("hidden");
+      // força reflow antes da transição
+      void menu.offsetWidth;
+      menu.classList.add("flex");
+      menu.style.transform = "translateY(0)";
+      btn.setAttribute("aria-expanded", "true");
+      icon.className = "fa-solid fa-xmark text-base";
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      menu.style.transform = "translateY(-100%)";
+      btn.setAttribute("aria-expanded", "false");
+      icon.className = "fa-solid fa-bars text-base";
+      document.body.style.overflow = "";
+      setTimeout(function () {
+        menu.classList.add("hidden");
+        menu.classList.remove("flex");
+      }, 300);
+    }
+    function toggle() {
+      if (menu.classList.contains("hidden")) open();
+      else close();
     }
 
-    linksInternos.forEach((link) => {
-        link.addEventListener('click', scrollToSection); // Added scrollToSection as event listener
+    btn.addEventListener("click", toggle);
+    menu.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", close);
     });
-}
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !menu.classList.contains("hidden")) close();
+    });
+  }
 
-scrollSuave();
+  /* ---------- Link ativo conforme seção --------------------------------- */
+  function initActiveNav() {
+    var links = Array.prototype.slice.call(
+      document.querySelectorAll(".js-nav a")
+    );
+    if (!links.length || !("IntersectionObserver" in window)) return;
 
+    var map = {};
+    links.forEach(function (link) {
+      var id = link.getAttribute("href").replace("#", "");
+      map[id] = link;
+    });
 
-const form = document.getElementById('form');
-const result = document.getElementById('result');
+    var sections = Object.keys(map)
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
 
-form.addEventListener('submit', function(e) {
-    const formData = new FormData(form);
-    e.preventDefault();
-
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    result.innerHTML = "Please wait..."
-
-    fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(async (response) => {
-            let json = await response.json();
-            if (response.status == 200) {
-                result.innerHTML = json.message;
-            } else {
-                console.log(response);
-                result.innerHTML = json.message;
-            }
-        })
-        .catch(error => {
-            console.log(error);
-            result.innerHTML = "Something went wrong!";
-        })
-        .then(function() {
-            form.reset();
-            setTimeout(() => {
-                result.style.display = "none";
-            }, 3000);
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          var link = map[entry.target.id];
+          if (!link) return;
+          if (entry.isIntersecting) {
+            links.forEach(function (l) {
+              l.classList.remove("is-active");
+            });
+            link.classList.add("is-active");
+          }
         });
-});
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  // Configuração da animação de scroll
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('anima');
-        // Opcional: Parar de observar após animar
-        // observer.unobserve(entry.target);
-      }
+    sections.forEach(function (s) {
+      observer.observe(s);
     });
-  }, observerOptions);
+  }
 
-  document.querySelectorAll('[data-section]').forEach(section => {
-    observer.observe(section);
-  });
+  /* ---------- Ano ------------------------------------------------------- */
+  function initYear() {
+    var el = document.getElementById("year");
+    if (el) el.textContent = new Date().getFullYear();
+  }
 
-  // Toggle do Menu
-  const menu = document.querySelector(".js-menu");
-  const btn = document.querySelector('#btn'); 
-  const links = menu.querySelectorAll('a'); 
-
-  function toggleMenu() {
-    menu.classList.toggle('ativo');
-    const icon = btn.querySelector('i');
-    if (menu.classList.contains('ativo')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-xmark');
-      document.body.style.overflow = 'hidden'; // Previne scroll quando menu está aberto
-    } else {
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-      document.body.style.overflow = '';
+  /* ---------- Download de CV ------------------------------------------- */
+  function initCvDownload() {
+    var btn = document.getElementById("cv-download");
+    if (!btn) return;
+    var CV_PATH = "cv/Antonio-Elias-CV.pdf";
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      fetch(CV_PATH, { method: "HEAD" })
+        .then(function (res) {
+          if (res.ok) {
+            var a = document.createElement("a");
+            a.href = CV_PATH;
+            a.download = "Antonio-Elias-CV.pdf";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+          } else {
+            notify();
+          }
+        })
+        .catch(notify);
+    });
+    function notify() {
+      var msg = document.createElement("div");
+      msg.className =
+        "fixed bottom-6 left-1/2 z-[80] -translate-x-1/2 rounded-xl bg-fg px-4 py-2.5 text-sm text-bg shadow-soft";
+      msg.textContent = "Currículo em PDF em breve! Use o formulário de contato.";
+      document.body.appendChild(msg);
+      setTimeout(function () {
+        msg.remove();
+      }, 3500);
     }
   }
 
-  function closeMenu() {
-    menu.classList.remove('ativo');
-    const icon = btn.querySelector('i');
-    if (icon) {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-    }
-    document.body.style.overflow = '';
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
   }
-
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    toggleMenu();
-  });
-  
-  document.addEventListener("click", (event) => {
-    if (!menu.contains(event.target) && !btn.contains(event.target) && menu.classList.contains('ativo')) {
-      closeMenu();
-    }
-  });
-
-  links.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-});
-
-// Scroll Suave Melhorado
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const headerOffset = 100; // Compensação para header fixo se houver
-            const elementPosition = targetElement.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: "smooth"
-            });
-        }
-    });
-});
-
-
-
-
-
-
+})();

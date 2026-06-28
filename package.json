@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-antonio-elias",
+  "version": "2.0.0",
+  "description": "Portfolio de Antonio Elias - desenvolvedor web. Site estatico com Tailwind CSS, integracao GitHub e analytics LGPD.",
+  "private": true,
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/output.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/output.css --watch",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "tailwindcss",
+    "github-pages"
+  ],
+  "author": "Antonio Elias",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
